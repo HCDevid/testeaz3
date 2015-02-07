@@ -80,21 +80,38 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
-
 $color1: #2d2de4;
 $color2: #f5f5ff;
+$color2dark: darken($color2,20%);
+$color2darker: darken($color2dark,20%);
 $color3: gray;
 
-.jumbotron {
+#jumbotron.jumbotron {
   /*text color, text align, background color*/
   text-align: center;
   background-color: $color1;
   color: $color2;
   a {
     /*link color*/
+    color:darken($color2,20%);
+  }
+  border-radius:0;
+
+  &:hover{
+    background-color: darken($color2,20%);
+    a{color: $color2darker};
   }
 }
 
-main, #menus {
+main#main, #menus {
   background-color: $color2;
+  padding: 0;
+}
+
+.panel {
+  margin: 10px;
+  &:hover{
+    background-color: darken($color2,20%);
+    a{color: $color2darker};
+  }
 }
