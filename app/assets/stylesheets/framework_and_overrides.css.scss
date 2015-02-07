@@ -80,3 +80,21 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+$color1: #2d2de4;
+$color2: #f5f5ff;
+$color3: gray;
+
+.jumbotron {
+  /*text color, text align, background color*/
+  text-align: center;
+  background-color: $color1;
+  color: $color2;
+  a {
+    /*link color*/
+  }
+}
+
+main, #menus {
+  background-color: $color2;
+}
