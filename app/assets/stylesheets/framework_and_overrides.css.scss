@@ -80,11 +80,15 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+/*Our own CSS */
+
 $color1: #110022;
 $color2: #f5f5ff;
 $color2dark: darken($color2,20%);
 $color2darker: darken($color2dark,20%);
 $color3: gray;
+$social_feed_height: 420px;
 
 #jumbotron.jumbotron {
   /*text color, text align, background color*/
@@ -101,7 +105,31 @@ $color3: gray;
     background-color: darken($color2,20%);
     a{color: $color2darker};
   }
+
+  /*because of social_feed smoothness*/
+  height: $social_feed_height;
+  padding: 0px; 
+
+  .container {
+    margin:0;
+    width:100%;
+  }
+  .non-social-col {
+    padding: 48px 60px;
+  }
+  .social-col {
+    padding:0;
+  }
+  .social-content{
+    width: 100%;
+  }
+  /*@media (max-width: @screen-xs-max) {
+    .social-content {
+      display: none;
+    }
+  }*/
 }
+
 
 main#main, #menus {
   background-color: $color2;
