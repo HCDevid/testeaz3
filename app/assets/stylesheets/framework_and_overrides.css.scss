@@ -102,7 +102,7 @@ $color2darker: darken($color2dark,20%);
 $color3: gray;
 */
 
-$social_feed_height: 420px;
+$social_feed_height: 520px;
 
 
 
@@ -135,6 +135,8 @@ $social_feed_height: 420px;
   }
   .social-col {
     padding:0;
+    padding-top: 70px;
+    padding-right: 15px;
   }
   .social-content{
     width: 100%;
