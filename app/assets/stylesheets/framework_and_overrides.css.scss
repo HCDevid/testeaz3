@@ -86,11 +86,15 @@ section {
 
 /*Woman with red hat and blue sky on beach inspired color scheme*/
 
-$color1: #017dc5;
+$color1: #bfd2e2;
+$color1dark: #81b1d7;
+$color1darker: #3f96d4;
+$color1darkest: #017dc5;
 $color2: #f0e6d8;
-$color2dark: darken($color2,20%);
-$color2darker: darken($color2dark,20%);
-$color3: #red;
+$color2dark: #a78375;
+$color2darker: #6f5253;
+$color2darkest: #3f3153;
+$color3: red;
 
 /*First color scheme*/
 
@@ -109,16 +113,18 @@ $social_feed_height: 420px;
 #jumbotron.jumbotron {
   /*text color, text align, background color*/
   text-align: center;
-  background-color: $color1;
-  color: $color2;
+  background-color: $color1darker;
+  color: $color3;
+  padding: 0;
+  margin-bottom:0;
   a {
     /*link color*/
-    color:darken($color2,20%);
+    color: $color2dark;
   }
   border-radius:0;
 
   &:hover{
-    background-color: darken($color2,20%);
+    /*background-color: darken($color1dark,20%);*/
     a{color: $color2darker};
   }
 
@@ -147,9 +153,19 @@ $social_feed_height: 420px;
 }
 
 
-main#main, #menus {
+#instructions {
   background-color: $color2;
+  border-radius: 0;
+  padding: 5em;
+  margin: 0;
+  width: 100%;
+
+}
+
+main#main, #menus {
+  background-color: $color1;
   padding: 0;
+  margin: 0;
 }
 
 .panel {
@@ -159,3 +175,22 @@ main#main, #menus {
     a{color: $color2darker};
   }
 }
+
+
+//Text Highlighting
+
+.titled {
+  text-align: center;
+  padding-bottom: 5em;
+}
+.strong {
+  color: $color3;
+}
+.weak {
+  color: white;
+}
+.centered {
+  text-align: center;
+}
+
+
