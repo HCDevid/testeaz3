@@ -83,7 +83,6 @@ section {
 
 /*Our own CSS */
 
-/*First color scheme*/
 
 /*Woman with red hat and blue sky on beach inspired color scheme*/
 
@@ -93,12 +92,15 @@ $color2dark: darken($color2,20%);
 $color2darker: darken($color2dark,20%);
 $color3: #red;
 
+/*First color scheme*/
+
+/*
 $color1: #110022;
 $color2: #f5f5ff;
 $color2dark: darken($color2,20%);
 $color2darker: darken($color2dark,20%);
 $color3: gray;
-
+*/
 
 $social_feed_height: 420px;
 
