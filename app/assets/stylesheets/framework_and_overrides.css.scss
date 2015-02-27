@@ -83,28 +83,26 @@ section {
 
 /*Our own CSS */
 
+/*First color scheme*/
+
+/*Woman with red hat and blue sky on beach inspired color scheme*/
+
+$color1: #017dc5;
+$color2: #f0e6d8;
+$color2dark: darken($color2,20%);
+$color2darker: darken($color2dark,20%);
+$color3: #red;
+
 $color1: #110022;
 $color2: #f5f5ff;
 $color2dark: darken($color2,20%);
 $color2darker: darken($color2dark,20%);
 $color3: gray;
 
-/*Sets colors for the theWeazy.org*/
-$logocolor1: red;
-$logocolor2: blue;
-$logocolor3: white;
-
-.logo1 {
-  color: $logocolor1;
-}
-.logo2 {
-  color: $logocolor2;
-}
-.logo3 {
-  color: $logocolor3;
-}
 
 $social_feed_height: 420px;
+
+
 
 #jumbotron.jumbotron {
   /*text color, text align, background color*/
