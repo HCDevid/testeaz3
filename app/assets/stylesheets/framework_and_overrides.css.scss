@@ -129,7 +129,7 @@ $social_feed_height: 520px;
   }
 
   /*because of social_feed smoothness*/
-  height: $social_feed_height;
+  min-height: $social_feed_height;
   padding: 0px; 
 
   .container {
