@@ -91,7 +91,7 @@ $fontsans1: 'Open Sans', sans-serif;
 $fontserif1: 'Droid Serif', serif;
 
 body {
-  font-family: $fontserif1;
+  font-family: $fontsans1;
 }
 
 
@@ -200,11 +200,12 @@ main#main, #menus {
   padding-bottom: 5em;
 }
 .strong {
-  color: $color3dark;
+  color: red;
+  font-family: $fontserif1;
 }
 .weak {
   color: $color3;
-  font-family: $fontsans1;
+  /*font-family: $fontsans1;*/
 }
 .centered {
   text-align: center;
