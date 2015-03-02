@@ -20,6 +20,10 @@ content="http://www.theweazy.org" />
     <title><%= content_for?(:title) ? yield(:title) : "TheWeazy.org" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Testeaz3" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500,900,200' rel='stylesheet' type='text/css'>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <% if Rails.env.production? %>

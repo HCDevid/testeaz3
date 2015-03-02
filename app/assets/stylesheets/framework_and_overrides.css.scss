@@ -85,6 +85,15 @@ section {
 
 /*Our own CSS */
 
+/*Universal Font Scheme*/
+
+$fontsans1: 'Open Sans', sans-serif;
+$fontserif1: 'Droid Serif', serif;
+
+body {
+  font-family: $fontserif1;
+}
+
 
 /*Woman with red hat and blue sky on beach inspired color scheme*/
 
@@ -96,7 +105,10 @@ $color2: #f0e6d8;
 $color2dark: #a78375;
 $color2darker: #6f5253;
 $color2darkest: #3f3153;
-$color3: red;
+$color3: #F0B59D;
+$color3dark: #C47D60;
+$color3darker: #7B3519;
+$color3darkest: #521903;
 
 /*First color scheme*/
 
@@ -188,10 +200,11 @@ main#main, #menus {
   padding-bottom: 5em;
 }
 .strong {
-  color: $color3;
+  color: $color3dark;
 }
 .weak {
-  color: white;
+  color: $color3;
+  font-family: $fontsans1;
 }
 .centered {
   text-align: center;
