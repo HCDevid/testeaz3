@@ -85,30 +85,22 @@ section {
 
 /*Our own CSS */
 
-/*Universal Font Scheme*/
-
-$fontsans1: 'Open Sans', sans-serif;
-$fontserif1: 'Droid Serif', serif;
-
-body {
-  font-family: $fontsans1;
-}
-
-
 /*Woman with red hat and blue sky on beach inspired color scheme*/
 
-$color1: #bfd2e2;
-$color1dark: #81b1d7;
-$color1darker: #3f96d4;
-$color1darkest: #017dc5;
-$color2: #f0e6d8;
-$color2dark: #a78375;
-$color2darker: #6f5253;
-$color2darkest: #3f3153;
-$color3: #F0B59D;
-$color3dark: #C47D60;
-$color3darker: #7B3519;
-$color3darkest: #521903;
+$color1: #BCF4BC;
+$color1dark: #8BE68B;
+$color1darker: #40C040;
+$color1darkest: #20AD20;
+
+$color2: #BCCBEC;
+$color2dark: #8AA1D5;
+$color2darker: #415EA1;
+$color2darkest: #274791;
+
+$color3: #FFFFC5;
+$color3dark: #FFFF9A;
+$color3darker: #F0F050;
+$color3darkest: #D9D928;
 
 /*First color scheme*/
 
@@ -123,12 +115,23 @@ $color3: gray;
 $social_feed_height: 520px;
 
 
+/*Universal Font Scheme*/
+
+$fontsans1: 'Open Sans', sans-serif;
+$fontserif1: 'Droid Serif', serif;
+
+body {
+  font-family: $fontsans1;
+  color: $color1darkest;
+}
+
+
 
 #jumbotron.jumbotron {
   /*text color, text align, background color*/
   text-align: center;
-  background-color: $color1darker;
-  color: $color3;
+  background-color: white;
+  color: $color1darkest;
   padding: 0;
   margin-bottom:0;
   a {
@@ -170,7 +173,7 @@ $social_feed_height: 520px;
 
 
 #instructions {
-  background-color: $color2;
+  background-color: $color1;
   border-radius: 0;
   padding: 5em;
   margin: 0;
@@ -179,7 +182,7 @@ $social_feed_height: 520px;
 }
 
 main#main, #menus {
-  background-color: $color1;
+  background-color: white;
   padding: 0;
   margin: 0;
 }
@@ -200,15 +203,17 @@ main#main, #menus {
   padding-bottom: 5em;
 }
 .strong {
-  color: red;
+  color: $color1darkest;
   font-family: $fontserif1;
 }
 .weak {
-  color: $color3;
+  color: $color1darker;
   /*font-family: $fontsans1;*/
 }
 .centered {
   text-align: center;
 }
 
-
+.announcement {
+  color: $color2darkest;
+}
