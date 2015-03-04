@@ -56,7 +56,7 @@ class VisitorsController < ApplicationController
   		{
   			name: "Burger King" ,
   			hours: "" ,
-  			image: "http://i.imgur.com/4zIkrGS.png" ,
+  			image: "http://i.imgur.com/vt50Cc3.png" ,
   			menu: "http://www.fastfoodmenuprices.com/burger-king-prices/" 
   		},
   		{
@@ -86,7 +86,7 @@ class VisitorsController < ApplicationController
   		},{
   			name: "KFC" ,
   			hours: "" ,
-  			image: "http://i.imgur.com/4zIkrGS.png" ,
+  			image: "http://i.imgur.com/uH6wzbC.png" ,
   			menu: "http://www.fastfoodmenuprices.com/kfc-menu-prices/" 
   		}
 	]

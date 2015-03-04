@@ -175,9 +175,12 @@ body {
 #instructions {
   background-color: $color1;
   border-radius: 0;
-  padding: 10em;
-  margin: 0;
-  width: 100%;
+  .row {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  /*margin: 0;*/
+  /*width: 100%;*/
 
 }
 
@@ -194,7 +197,13 @@ main#main, #menus {
     a{color: $color2darker};
   }
 }
-
+.menupics {
+  height: 10em;
+  /*width: auto;*/
+  /*width: 100%;*/
+  vertical-align: middle;
+  display: table-cell;
+}
 
 //Text Highlighting
 
