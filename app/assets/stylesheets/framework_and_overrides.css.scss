@@ -123,6 +123,7 @@ $fontserif1: 'Droid Serif', serif;
 body {
   font-family: $fontsans1;
   color: $color1darkest;
+  padding-top: 65px;
 }
 
 
@@ -148,7 +149,12 @@ body {
   /*because of social_feed smoothness*/
   min-height: $social_feed_height;
   padding: 0px; 
-
+  
+  img{
+    width: 75%;
+    height: auto;
+  }
+  
   .container {
     margin:0;
     width:100%;
@@ -173,7 +179,8 @@ body {
 
 
 #instructions {
-  background-color: $color1;
+  background-color: $color1darker;
+  color: white;
   border-radius: 0;
   .row {
     padding-top: 4em;
@@ -214,6 +221,11 @@ main#main, #menus {
 }
 .strong {
   color: $color1darkest;
+  font-family: $fontserif1;
+}
+
+.stronglight {
+  color: white;
   font-family: $fontserif1;
 }
 .weak {

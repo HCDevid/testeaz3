@@ -21,6 +21,12 @@ class VisitorsController < ApplicationController
   			image: "http://i.imgur.com/cnCc7Jn.png",
   			menu: "http://www.fastfoodmenuprices.com/mcdonalds-prices/"
   		},{
+  			name:  "Five Guys",
+  			hours: "" ,
+  			image: "http://i.imgur.com/tfAHtOT.png" ,
+  			menu:  "http://i.imgur.com/Q946Qee.png",
+  			notes: "We delivery any prepared food."
+  		},{
   			name:  "Krogers",
   			hours: "" ,
   			image: "http://i.imgur.com/aMUgNaS.png" ,
@@ -32,10 +38,10 @@ class VisitorsController < ApplicationController
   			image: "http://i.imgur.com/PaZsVWx.jpg" ,
   			menu:  "http://www.fastfoodmenuprices.com/subway-prices/"
   		},{
-  			name:  "Evergreen",
+  			name:  "Chipotle",
   			hours: "" ,
-  			image:  "" ,
-  			menu: "https://s3.amazonaws.com/weazy/Evergreen.pdf" 
+  			image:  "http://i.imgur.com/erZf8m1.png" ,
+  			menu: "http://i.imgur.com/0HvYsfA.png" 
   		},{
   			name: "Wendy's",
   			hours:  "",
@@ -68,6 +74,12 @@ class VisitorsController < ApplicationController
   			image: "http://i.imgur.com/vt50Cc3.png" ,
   			menu: "http://www.fastfoodmenuprices.com/burger-king-prices/" 
   		},
+        {
+  			name: "Pancheros" ,
+  			hours: "" ,
+  			image: "http://i.imgur.com/CbpZiHA.png" ,
+  			menu: "http://pancheros.com/menu" 
+  		},
   		{
   			name: "The Big Salad" ,
   			hours: "" ,
@@ -88,10 +100,10 @@ class VisitorsController < ApplicationController
   			image: "http://i.imgur.com/uyym5Jt.jpg" ,
   			menu: "http://www.greatplainsburger.com/fax-order.pdf" 
   		},{
-  			name: "White Castle" ,
+  			name: "BTB Burrito" ,
   			hours: "" ,
-  			image: "http://i.imgur.com/u5r2SZi.png" ,
-  			menu: "http://www.whitecastle.com/food/menu/featured" 
+  			image: "http://i.imgur.com/G5IFxWY.png" ,
+  			menu: "http://www.btbburrito.com/btb-menu" 
   		},{
   			name: "KFC" ,
   			hours: "" ,
