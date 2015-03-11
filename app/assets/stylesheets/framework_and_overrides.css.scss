@@ -118,7 +118,7 @@ $social_feed_height: 520px;
 /*Universal Font Scheme*/
 
 $fontsans1: 'Open Sans', sans-serif;
-$fontserif1: 'Droid Serif', serif;
+$fontserif1: 'Arial', sans-serif;
 
 body {
   font-family: $fontsans1;
@@ -204,6 +204,12 @@ main#main, #menus {
     a{color: $color2darker};
   }
 }
+
+@media (min-width: 1200px){
+  .col-lg-2 {
+    width: 16.36%;
+  }
+}
 .menupics {
   height: 20em;
   padding:13px;
@@ -222,11 +228,13 @@ main#main, #menus {
 .strong {
   color: $color1darkest;
   font-family: $fontserif1;
+  font-weight: 200;
 }
 
 .stronglight {
   color: white;
   font-family: $fontserif1;
+  font-weight: 200;
 }
 .weak {
   color: $color1darker;
