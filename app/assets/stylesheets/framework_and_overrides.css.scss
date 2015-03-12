@@ -212,10 +212,20 @@ main#main, #menus {
 }
 .menupics {
   height: 20em;
-  padding:13px;
+  margin:13px;
   /*width: auto;*/
   /*width: 100%;*/
   vertical-align: middle;
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+//fix for firefox
+.container-fluid{
+  table-display: fixed;
+}
+.col-lg-2 {
   display: table-cell;
 }
 
