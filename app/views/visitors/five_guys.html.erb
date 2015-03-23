@@ -1,0 +1,76 @@
+<script id="item_template" type="text/template">
+<div class="item" data-entry_number="{{= entry_number }}">
+    <span class="name">{{= name }}</span> 
+    <span class="total_price">{{= Number(total_price).toFixed(2) }}</span>
+    <span class="price">{{= Number(price).toFixed(2) }}</span>
+    <br/>
+    <div class="variations">
+        {{ for( var i = 0; i < variations_data.length ; i++) { }}
+            <div class="variation">
+                <span class="name">{{= variations_data[i].name }}</span>
+                {{ if( Number(variations_data[i].price) != 0) { }}
+                    <span class="price">{{= variations_data[i].price }}</span>
+                {{ } }}
+            </div>
+        {{ } }}
+    </div>
+    <br/>
+    <div class="notes">{{= notes }}</div>
+    <div class="remove"><a href="#" class="remove_item">remove</a></div>
+</div>
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <h2>Order</h2>
+            <div id="order">
+                <div id="items">
+                    
+                </div>
+                <div id="summary">
+                    <div id="subtotal">
+                        <span class="summary_label">Subtotal</span>
+                        <span class="summary_info">{{= subtotal }}</span>
+                    </div>
+                    <div id="delivery">
+                        <span class="summary_label">Delivery Fee</span>
+                        <span class="summary_info">{{= delivery }}</span>
+                    </div>
+                    <div id="tax">
+                        <span class="summary_label">Tax</span>
+                        <span class="summary_info">{{= tax }}</span>
+                    </div>
+                    <div id="total">
+                        <span class="summary_label">Total</span>
+                        <span class="summary_info">{{= tax }}</span>
+                        <br/>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="menu">
+            <% @categories.each_with_index do |category,i| %>
+                <h1 id="<%= category.first()[:category] %>"><%= category.first()[:category] %></h1>
+                <div class="category">
+                    <% category.each do |item| %>
+                        <div class="row item-container">
+                            <%= render partial: "item", :locals => { :item => item } %>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+        <div class="col-lg-3" id="contents">
+            <% @categories.each_with_index do |category,i| %>
+                <h2><%= link_to category.first()[:category], "##{category.first()[:category]}" %></h2>
+                <div class="category">
+                    <% category.each do |item| %>
+                        <h4><%= link_to item[:name], "##{item[:id]}" %></h4>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

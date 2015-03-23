@@ -1,0 +1,59 @@
+<div class="item" id="<%= item[:id] %>"  >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row item-title">
+                    <div class="col-lg-12">
+                        <span class="name" data-name="<%= item[:name] %>"><%= item[:name]  %></span>
+                        <span class="price" data-price="<%= item[:price] %>">$<%= number_with_precision(item[:price],precision:2) %></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                            <% item[:groupedVariations].each_with_index do |variation_group,i| %>
+                                <% if variation_group.first[:type] == "mutex" %>
+                                <div class="col-lg-3 variation-group">
+                                    <select class="variation<%= i.to_s %> variation mutex">
+                                    <% variation_group.each do |variation| %>
+                                        <option value="<%= variation[:name] %>" data-price="<%=  number_with_precision(variation[:price],precision: 2) %>" ><%= variation[:name] +" - "+ number_with_precision(variation[:price], precision: 2) %></option>
+                                    <% end %>
+                                    </select>
+                                </div>
+                                <% elsif variation_group.first[:type] == "select" %>
+                                <div class="col-lg-3 variation-group">
+                                    <div class="variation<%= i.to_s %> select variation">
+                                    <% variation_group.each do |variation| %>
+                                        <input type="checkbox" value="<%= variation[:name] %>" data-price="<%= number_with_precision(variation[:price],precision: 2) %>" />
+                                        <span class="name"><%= variation[:name] %></span> <span class="price"><%= number_with_precision(variation[:price],precision: 2) %></span><br/>
+                                    <% end %>
+                                    </div>
+                                </div>
+                                <% elsif variation_group.first[:type] == "binary" %>
+                                    <div class="variation<%= i.to_s %> binary variation col-lg-3 variation-group">
+                                       <input type="checkbox" value="<%= variation_group.first[:name] %>" data-price="<%=  number_with_precision((variation_group.first())[:price],precision: 2)  %>" />
+                                       <span class="name"><%= (variation_group.first())[:name].to_s  %></span> <span class="price"><%= number_with_precision((variation_group.first())[:price],precision: 2)  %></span>
+                                    </div>
+                                <% else %>
+                                <% end %>
+                            <% end %>
+                        <div class="col-lg-2">
+                            <div class="notes" ><textarea cols="20" rows="4" placeholder="Add Your Notes"></textarea></div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row">-->
+                <!--    <div class="col-lg-12">-->
+                <!--        <div class="notes" ><textarea cols="20" rows="4" placeholder="Add Your Notes"></textarea></div>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <div class="row">
+                    <div class="col-lg-12 add">
+                        <a href="#" class="btn btn-success add_item">Add Item</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+            </div>
+        </div>
+    </div>
+</div>

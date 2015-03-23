@@ -19,6 +19,7 @@ gem 'devise_invitable'
 gem 'high_voltage'
 gem 'simple_form'
 group :development do
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'sqlite3'
   gem 'pg'

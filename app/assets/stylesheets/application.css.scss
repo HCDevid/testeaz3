@@ -13,4 +13,126 @@
  *= require_tree .
  *= require_self
  */
+ 
+ 
+#three_dollar_container.marketing{
+    background-color:white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    h1,h2,h3 {
+        text-align: center;
+        color:white;
+    }
+    h1 {
+      font-size: 4em;
+      font-weight: 700;
+    }
+    h2 { font-size: 3em; }
+    .row {
+        padding-top:.5em;
+        padding-bottom:.5em;
+    }
+    #three_dollar_menus_headers.row {
+        background-color:#40C040;
+        padding-top:2em;
+        padding-bottom:2em;
+    }
+}
 
+
+
+ #ordering {
+ 
+ #order{
+     border: 1px black solid;
+     padding: 1.5em;
+     .base_item_price_header_label{
+         float: right;
+         width: 35px;
+         margin-right:5px;
+     }
+     .total_item_price_header_label{
+         float: right;
+         width: 35px;
+         margin-right: 8px;
+         margin-right: -3px;
+     }
+     #order_header{
+         border-bottom: 1px solid;
+         padding-bottom: 1em;
+         margin-bottom: 1em;
+     }
+     .item {
+         border-bottom: 1px solid;
+         padding-bottom: .5em;
+         padding-top: .5em;
+         .variations {
+             margin-left:.5em;
+             .name {
+                 display:inline-block;
+             }
+             .price {
+                 display: inline-block;
+                 margin-right: 43px;
+                 width: 43px;
+                 float: right;
+                 text-align: right;
+             }
+         }
+         .notes {
+             margin-left: .5em;
+         }
+     }
+     
+    %clearfix {
+    &:after {
+        content: " ";
+        display: block;
+        clear: both;
+        }
+    }
+    #summary { padding-top: .5em};
+    #subtotal, #tax, #delivery, #total {
+        @extend %clearfix;   
+    }
+    .price, .total_price, .summary_info{
+        display: inline-block;
+        width: 43px;
+        float: right;
+        text-align: right;
+    }
+    #place_order_container {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+ }
+ 
+ #menu{
+     .item{
+         .item-title{
+             .name {
+                 font-size: 24px;
+                 padding: 10px;
+             }
+             .price {
+                 font-size: 20px;
+                 padding: 12px;
+             }
+             padding-bottom: 35px;
+         }
+         .variation-group {
+             min-height: 5em;
+             .price {
+                 float: right;
+             }
+         }
+         .add {
+             margin-left:20px;
+             margin-top: 20px;
+         }
+         margin-bottom:3em;
+     }
+ }
+ 
+
+}

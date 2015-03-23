@@ -4,14 +4,14 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 non-social-col">
 					<!-- <h1 ><span class = "weak">The</span><span class = "strong"><b>Weazy</b></span><span class = "weak">.org</span></h1> -->
-					<h1 ><span>The</span><span class = "strong"><b>Weazy</b></span><span>.org</span></h1>
+					<!--<h1 ><span>The</span><span class = "strong"><b>Weazy</b></span><span>.org</span></h1>-->
 					<!--<h2>6 - 12 PM</h2>-->
 					
  				    <h2>We're closed today, see you Monday!</h2>
 					<img src = 'http://i.imgur.com/dLTIdbc.png'>
 					<!--<h3 class ="strong">Open 6pm-Midnight</h3>-->
-					<h3 class = "strong">Delivery from Any Restaurant for $3.99 + 10% </h3>
-					<h3 class = 'strong'>No Marked-up Menus or Hidden Fees </h3>
+					<!--<h3 class = "strong">Delivery from Any Restaurant for $3.99 + 10% </h3>-->
+					<!--<h3 class = 'strong'>No Marked-up Menus or Hidden Fees </h3>-->
 
 <!--<p class = "announcement">-->
 <!--	<em>-->
@@ -40,43 +40,63 @@
 
 
 <div class="container-fluid" id="instructions">
-	<div class="row">
-		<h3 class = "stronglight" style="text-align:center">How to Order</h3>
-	</div class="row">
-	<div class="row clearfix" >
-		<div class = "col-md-4">
-			<div class = 'centered'>
-				<i class = 'fa fa-cutlery fa-5x fa-align-center'></i>
+	
+	<div class="row marketing" id="three_dollar_container">
+		<div class="col-lg-12">
+			<div class="row" id="three_dollar_menus_headers">
+				<div class="col-lg-12">
+					<h1>$3 Delivery Fee</h1>
+					<h3>Click a menu to start</h3>
+				</div>
 			</div>
-			<p class = "lead stronglight centered">
-				Pick any Restaurant in Ann Arbor that you want food from!
-			</p>
-			
-			
-		</div>
-		<div class = "col-md-4">
-			<div class = 'centered'>
-				<i class = 'fa fa-comments fa-5x'></i>
+			<div id="3d_menus" class="row">
+				<div class="col-lg-1"></div>
+				<% @restaurants_with_menus.each do |rm1| %>
+						<%= render partial: 'restaurant', locals: {restaurant: rm1 } %>
+				<% end %>
 			</div>
-			<p class = "lead stronglight centered">
-				<a id="order" href="sms:+17347078971">Text (734) 707-8971</a> or Order Through the Chat Window Below
-			</p>
-			
-			
 		</div>
-		<div class = "col-md-4">
-			<div class = 'centered'>
-				<i class = 'fa fa-truck fa-5x'></i>
-			</div>
-			<p class = "lead stronglight centered">
-				Wait for your food to arrive and pay by credit card once it's here!
-			</p>
-			
-			
-		</div>
-
-
 	</div>
+	
+	<div class="row">
+		<h1 class = "stronglight" style="text-align:center;font-size:4em;font-weight:700;">Bespoke Orders</h1>
+		<h3 class = "stronglight" style="text-align:center">$3 - 4 plus 10% Per Delivery, from anywhere in Ann Arbor</h3>
+		<h3 class = "stronglight" style="text-align:center">Use the site chat below or text us at <a href="tel://1-734-707-8971">(734) 707-8971</a></h3>
+	</div class="row">
+	<!--<div class="row clearfix" >-->
+	<!--	<div class = "col-md-4">-->
+	<!--		<div class = 'centered'>-->
+	<!--			<i class = 'fa fa-cutlery fa-5x fa-align-center'></i>-->
+	<!--		</div>-->
+	<!--		<p class = "lead stronglight centered">-->
+	<!--			Pick any Restaurant in Ann Arbor that you want food from!-->
+	<!--		</p>-->
+			
+			
+	<!--	</div>-->
+	<!--	<div class = "col-md-4">-->
+	<!--		<div class = 'centered'>-->
+	<!--			<i class = 'fa fa-comments fa-5x'></i>-->
+	<!--		</div>-->
+	<!--		<p class = "lead stronglight centered">-->
+	<!--			<a id="order" href="sms:+17347078971">Text (734) 707-8971</a> or Order Through the Chat Window Below-->
+	<!--		</p>-->
+			
+			
+	<!--	</div>-->
+	<!--	<div class = "col-md-4">-->
+	<!--		<div class = 'centered'>-->
+	<!--			<i class = 'fa fa-truck fa-5x'></i>-->
+	<!--		</div>-->
+	<!--		<p class = "lead stronglight centered">-->
+	<!--			Wait for your food to arrive and pay by credit card once it's here!-->
+	<!--		</p>-->
+			
+			
+	<!--	</div>-->
+
+
+	<!--</div>-->
 	<div id="menus" class="row marketing">
 		<!-- <div class="col-md-4"> -->
 			<!-- <div class="panel">
