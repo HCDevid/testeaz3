@@ -212,7 +212,7 @@ main#main, #menus {
 }
 .menupics {
   height: 20em;
-  margin:13px;
+  margin: 13px;
   /*width: auto;*/
   /*width: 100%;*/
   vertical-align: middle;
@@ -221,6 +221,21 @@ main#main, #menus {
   background-position: center;
   background-repeat: no-repeat;
 }
+  
+@media (max-width: 768px) {
+  .menupics {
+    height: 10em;
+    margin: 0;
+    /*width: auto;*/
+    /*width: 100%;*/
+    vertical-align: middle;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+  
 //fix for firefox
 .container-fluid{
   table-display: fixed;

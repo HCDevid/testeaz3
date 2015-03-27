@@ -18,94 +18,94 @@ class VisitorsController < ApplicationController
   
   def chipotle
     
-    @varHash_pre = [
-      {:vID => 1,	:type =>"mutex",	:name =>"Apple"},
-    	{:vID => 1,	:type =>"mutex",	:name => "Peach Orange"},
-    	{:vID => 1,	:type =>"mutex",	:name => "Pineapple Orange Banana"},
-    	{:vID => 1,	:type =>"mutex",	:name => "Pomegranate Cherry"},
-    	{:vID => 2,	:type =>"binary",	:name => "Large"},
-    	{:vID => 3,	:type =>"mutex",	:name => "Soft Corn"},
-    	{:vID => 3,	:type =>"mutex",	:name => "Soft Flour"},
-    	{:vID => 3,	:type =>"mutex",	:name => "Crispy Corn"},
-    	{:vID => 4,	:type =>"select",	:name => "Extra Filling"},
-    	{:vID => 5,	:type =>"mutex",	:name => "White Rice"},
-    	{:vID => 5,	:type =>"mutex",	:name => "Brown Rice"},
-    	{:vID => 6,	:type =>"mutex",	:name => "Black Beans"},
-    	{:vID => 6,	:type =>"mutex",	:name => "Pinto Beans"},
-    	{:vID => 4,	:type =>"select",	:name => "Cheese"},
-    	{:vID => 4,	:type =>"select",	:name => "Mild Salsa"},
-    	{:vID => 4,	:type =>"select",	:name => "Medium Salsa"},
-    	{:vID => 4,	:type =>"select",	:name => "Hot Salsa"},
-    	{:vID => 4,	:type =>"select",	:name => "Sour Cream"},
-    	{:vID => 4,	:type =>"select",	:name => "Guacamole"},
-    	{:vID => 4,	:type =>"select",	:name => "Chipotle Honey-Vinaigrette"}
-    ]
+    @varHash_pre = [{:name => "Apple",	:vID => 1,	:type => "mutex"},
+      {:name => "Peach Orange",	:vID => 1,	:type => "mutex"},
+      {:name => "Pineapple Orange Banana",	:vID => 1,	:type => "mutex"},
+      {:name => "Pomegranate Cherry",	:vID => 1,	:type => "mutex"},
+      {:name => "Large",	:vID => 5,	:type => "select"},
+      {:name => "Soft Corn",	:vID => 2,	:type => "mutex"},
+      {:name => "Soft Flour",	:vID => 2,	:type => "mutex"},
+      {:name => "Crispy Corn",	:vID => 2,	:type => "mutex"},
+      {:name => "No Rice",	:vID => 3,	:type => "mutex"},
+      {:name => "White Rice",	:vID => 3,	:type => "mutex"},
+      {:name => "Brown Rice",	:vID => 3,	:type => "mutex"},
+      {:name => "No Beans",	:vID => 4,	:type => "mutex"},
+      {:name => "Black Beans",	:vID => 4,	:type => "mutex"},
+      {:name => "Pinto Beans",	:vID => 4,	:type => "mutex"},
+      {:name => "Extra Filling",	:vID => 6,	:type => "select"},
+      {:name => "Guacamole",	:vID => 6,	:type => "select"},
+      {:name => "Fajita Veggies",	:vID => 6,	:type => "select"},
+      {:name => "Mild Salsa",	:vID => 6,	:type => "select"},
+      {:name => "Medium Salsa",	:vID => 6,	:type => "select"},
+      {:name => "Hot Salsa",	:vID => 6,	:type => "select"},
+      {:name => "Sour Cream",	:vID => 6,	:type => "select"},
+      {:name => "Cheese",	:vID => 6,	:type => "select"},
+      {:name => "Lettuce",	:vID => 6,	:type => "select"},
+      {:name => "Chipotle Honey-Vinaigrette Dressing",	:vID => 6,	:type => "select"}]
     
     @varHash = @varHash_pre.map.with_index do |x,i|
       x[:col] = i
       x
     end
     
-    @items = [{:category => "Burrito" ,	:name => "Burrito - Chicken"	, :price => 6.5		},
-      {:category => "Burrito" ,	:name => "Burrito - Steak"		, :price => 7.2		},
-      {:category => "Burrito" ,	:name => "Burrito - Barbacoa"	, :price => 7.2		},
-      {:category => "Burrito" ,	:name => "Burrito - Carnitas"	, :price => 6.95	},
-      {:category => "Burrito" ,	:name => "Burrito - Sofritas"	, :price => 6.5		},
-      {:category => "Burrito" ,	:name => "Burrito - Veggie"		, :price => 6.5		},
-      {:category => "Bowl" 	,	:name => "Bowl - Chicken"		, :price => 6.5		},
-      {:category => "Bowl" 	,	:name => "Bowl - Steak"			, :price => 7.2		},
-      {:category => "Bowl" 	,	:name => "Bowl - Barbacoa"		, :price => 7.2		},
-      {:category => "Bowl" 	,	:name => "Bowl - Carnitas"		, :price => 6.95	},
-      {:category => "Bowl" 	,	:name => "Bowl - Sofritas"		, :price => 6.5		},
-      {:category => "Bowl" 	,	:name => "Bowl - Veggie"		, :price => 6.5		},
-      {:category => "Tacos" 	,	:name => "Tacos - Chicken"		, :price => 6.5		},
-      {:category => "Tacos" 	,	:name => "Tacos - Steak"		, :price => 7.2		},
-      {:category => "Tacos" 	,	:name => "Tacos - Barbacoa"		, :price => 7.2		},
-      {:category => "Tacos" 	,	:name => "Tacos - Carnitas"		, :price => 6.95	},
-      {:category => "Tacos" 	,	:name => "Tacos - Sofritas"		, :price => 6.5		},
-      {:category => "Tacos" 	,	:name => "Tacos - Veggie"		, :price => 6.5		},
-      {:category => "Salads" 	,	:name => "Salads - Chicken"		, :price => 6.5		},
-      {:category => "Salads" 	,	:name => "Salads - Steak"		, :price => 7.2		},
-      {:category => "Salads" 	,	:name => "Salads - Barbacoa"	, :price => 7.2		},
-      {:category => "Salads" 	,	:name => "Salads - Carnitas"	, :price => 6.95	},
-      {:category => "Salads" 	,	:name => "Salads - Sofritas"	, :price => 6.5		},
-      {:category => "Salads" 	,	:name => "Salads - Veggie"		, :price => 6.5		},
-      {:category => "Sides" 	,	:name => "Chips"				, :price => 1.3		},
-      {:category => "Sides" 	,	:name => "Soda"					, :price => 1.8		},
-      {:category => "Sides" 	,	:name => "Bottled Water"		, :price => 2.25	},
-      {:category => "Sides" 	,	:name => "Nantucket Nectar"		, :price => 2.6		},
-      {:category => "Sides" 	,	:name => "Izze"					, :price => 2.6		}]
-    
-    @item_variations = [[nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, 0, 0, 0, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, 0, 0, 0, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, 0, 0, 0, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, 0, 0, 0, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, 0, 0, 0, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, 0, 0, 0, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, 0],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, 0],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, 0],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, 0],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, 0],
-      [nil, nil, nil, nil, nil, nil, nil, nil, 2.85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.95, 0],
-      [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 0.65, 0.65, 0.65, nil, 1.95, nil],
-      [nil, nil, nil, nil, 0.3, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
-      [0, 0, 0, 0, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]]
-      
+    @items = [{:category=> "Burrito",	:name=> "Burrito - Chicken", :price => 8},
+      {:category=> "Burrito",	:name=> "Burrito - Steak", :price => 9},
+      {:category=> "Burrito",	:name=> "Burrito - Barbacoa", :price => 9},
+      {:category=> "Burrito",	:name=> "Burrito - Carnitas", :price => 9},
+      {:category=> "Burrito",	:name=> "Burrito - Sofritas", :price => 8.5},
+      {:category=> "Burrito",	:name=> "Burrito - Veggie", :price => 8.5},
+      {:category=> "Bowl",	:name=> "Bowl - Chicken", :price => 8.5},
+      {:category=> "Bowl",	:name=> "Bowl - Steak", :price => 9},
+      {:category=> "Bowl",	:name=> "Bowl - Barbacoa", :price => 9},
+      {:category=> "Bowl",	:name=> "Bowl - Carnitas", :price => 9},
+      {:category=> "Bowl",	:name=> "Bowl - Sofritas", :price => 8.5},
+      {:category=> "Bowl",	:name=> "Bowl - Veggie", :price => 8.5},
+      {:category=> "Tacos",	:name=> "Tacos - Chicken", :price => 8.5},
+      {:category=> "Tacos",	:name=> "Tacos - Steak", :price => 9},
+      {:category=> "Tacos",	:name=> "Tacos - Barbacoa", :price => 9},
+      {:category=> "Tacos",	:name=> "Tacos - Carnitas", :price => 9},
+      {:category=> "Tacos",	:name=> "Tacos - Sofritas", :price => 8.5},
+      {:category=> "Tacos",	:name=> "Tacos - Veggie", :price => 8.5},
+      {:category=> "Salad:s",	:name=> "Salads - Chicken", :price => 8.5},
+      {:category=> "Salads",	:name=> "Salads - Steak", :price => 9},
+      {:category=> "Salads",	:name=> "Salads - Barbacoa", :price => 9},
+      {:category=> "Salads",	:name=> "Salads - Carnitas", :price => 9},
+      {:category=> "Salads",	:name=> "Salads - Sofritas", :price => 8.5},
+      {:category=> "Salads",	:name=> "Salads - Veggie", :price => 8.5},
+      {:category=> "Sides",	:name=> "Chips", :price => 2},
+      {:category=> "Sides",	:name=> "Soda", :price => 2.75},
+      {:category=> "Sides",	:name=> "Bottled Water", :price => 3},
+      {:category=> "Sides",	:name=> "Nantucket Nectar", :price => 3},
+      {:category=> "Sides",	:name=> "Izze", :price => 3}]
+    @item_variations =   [[nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil ,0,0,0,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil ,0,0,0,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil ,0,0,0,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil ,0,0,0,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil ,0,0,0,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil ,0,0,0,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0, nil ],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0,0],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0,0],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0,0],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0,0],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0,0],
+     [nil , nil , nil , nil , nil , nil , nil ,0,0,0,0,0,0, nil ,3.5,3,0,0,0,0,0,0,0,0],
+     [nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil ,3, nil ,1,1,1, nil , nil , nil , nil ],
+     [nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil ,0.5, nil , nil , nil , nil , nil , nil , nil , nil , nil , nil ],
+     [nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil ],
+     [0,0,0,0, nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil ],
+     [nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil , nil ]]
     #for each row, you have the basic information for the item
     #but then you must determine which of the refinements are applicable
     # [1,1,2,3,3,3]
@@ -226,6 +226,7 @@ class VisitorsController < ApplicationController
   end
   
   def big_ten_burrito
+    
     @varHash_pre = [{:name => "Burrito", :type => "mutex", :vID => 1 },
     {:name => "Bowl", :type => "mutex", :vID => 1 },
     {:name => "Deluxe", :type => "mutex", :vID => 2 },
@@ -290,76 +291,76 @@ class VisitorsController < ApplicationController
     { :category => "Sides, Drinks, & Desserts", :name => "Hot Salsa/Sauce", :price => 0},
     { :category => "Sides, Drinks, & Desserts", :name => "Diablo Salsa/Sauce", :price => 0}]
 
-  @item_variations = [ [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
-    [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil]]
+    @item_variations = [ [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [0	, 0,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil, 	nil,	2.75,	5.25,	1.5,	0, 0.5,	0,	0,	0	,0],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil],
+      [nil,	nil,	nil,	nil,	nil, 	nil,	nil,	nil,	nil	,nil]]
 
-    ids_for_columns = @varHash.map{ |x| x[:vID]}
-    
-    @itemsWithVariations = []
-    k = 0
-    @items.each_with_index do |item, i|
-      varHashForRowMinusPrice = @varHash.deep_dup
-      varHashForRow = varHashForRowMinusPrice.each_with_index.map do |variation,j|
-        if @item_variations[i][j] == nil
-          nil
-        else
-          variation[:price] = @item_variations[i][j]
-          variation
+      ids_for_columns = @varHash.map{ |x| x[:vID]}
+      
+      @itemsWithVariations = []
+      k = 0
+      @items.each_with_index do |item, i|
+        varHashForRowMinusPrice = @varHash.deep_dup
+        varHashForRow = varHashForRowMinusPrice.each_with_index.map do |variation,j|
+          if @item_variations[i][j] == nil
+            nil
+          else
+            variation[:price] = @item_variations[i][j]
+            variation
+          end
         end
+        varHashForRow.compact!
+        item[:groupedVariations] = (varHashForRow.group_by { |x| x[:vID]}).values
+        @itemsWithVariations.push item
       end
-      varHashForRow.compact!
-      item[:groupedVariations] = (varHashForRow.group_by { |x| x[:vID]}).values
-      @itemsWithVariations.push item
-    end
-    for m in 0..(@itemsWithVariations.length-1)
-      @itemsWithVariations[m][:id] = m
-    end
-    @categories = (@itemsWithVariations.group_by { |x| x[:category]}).values
-    
-    render 'chipotle'
+      for m in 0..(@itemsWithVariations.length-1)
+        @itemsWithVariations[m][:id] = m
+      end
+      @categories = (@itemsWithVariations.group_by { |x| x[:category]}).values
+      
+      render 'chipotle'
   end
   
   def five_guys
@@ -390,7 +391,6 @@ class VisitorsController < ApplicationController
     {:name => "Grilled Green Peppers", :type => "select", :vID => 3},
     {:name => "Plain", :type => "select", :vID => 3}]
 
-    
     @varHash = @varHash_pre.map.with_index do |x,i|
       x[:col] = i
       x
@@ -418,7 +418,7 @@ class VisitorsController < ApplicationController
     {:category => "Sides", :name => "Large Drink", :price => 3.25 },
     {:category => "Sides", :name => "Bottled Water", :price => 3 }]
 
-  @item_variations = [[nil, nil, nil, nil, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    @item_variations = [[nil, nil, nil, nil, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [nil, nil, nil, 0, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [nil, nil, nil, nil, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [nil, nil, nil, 0, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -575,9 +575,9 @@ class VisitorsController < ApplicationController
     {:category => "Desserts", :name => "McFlurry Snack Size", :price => "1.79" },
     {:category => "Desserts", :name => "McFlurry Regular", :price => "2.59" }]
 
-@item_variations = [[nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
-[nil, 0, 0.64, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 0, 0, 0, 0, 0, 0],
-[nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
+    @item_variations = [[nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
+    [nil, 0, 0.64, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 0, 0, 0, 0, 0, 0],
+    [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
     [nil, 0, 0.64, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 0, 0, 0, 0, 0, 0],
     [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil],
     [nil, 0, 0.64, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 0, 0, 0, 0, 0, 0],
@@ -708,7 +708,7 @@ class VisitorsController < ApplicationController
   			image: "http://i.imgur.com/G5IFxWY.png" ,
   			menu: "http://www.theweazy.org/big_ten_burrito" 
   		}
-    ]
+      ]
     
     
   	@restaurants1 = [{
@@ -728,59 +728,59 @@ class VisitorsController < ApplicationController
   			image:  "http://i.imgur.com/uCGO023.png",
   			menu:  "http://www.fastfoodmenuprices.com/wendys-prices/"
   		}
-	]
+	  ]
 
-	@restaurants2 = [
-		{
-  			name: "Taco Bell" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/4zIkrGS.png" ,
-  			menu: "http://www.fastfoodmenuprices.com/taco-bell-prices/" 
-  		},
+  	@restaurants2 = [
   		{
-  			name: "Starbucks" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/bdxfdKo.jpg" ,
-  			menu: "http://www.fastfoodmenuprices.com/starbucks-prices/" 
-  		},
-  		{
-  			name: "Burger King" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/vt50Cc3.png" ,
-  			menu: "http://www.fastfoodmenuprices.com/burger-king-prices/" 
-  		},
-        {
-  			name: "Pancheros" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/CbpZiHA.png" ,
-  			menu: "http://pancheros.com/menu" 
-  		},
-  		{
-  			name: "The Big Salad" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/ivCmZ6T.png" ,
-  			menu: "https://s3.amazonaws.com/weazy/TheBigSalad.pdf" 
-  		},
-  		{
-  			name: "Curry On" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/RjHy39d.jpg" ,
-  			menu: "https://s3.amazonaws.com/weazy/CurryOn.pdf" 
-  		}
-  	]
-  	@restaurants3 =	[
-  		{
-  			name: "Great Plains Burger" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/uyym5Jt.jpg" ,
-  			menu: "http://www.greatplainsburger.com/fax-order.pdf" 
-  		},{
-  			name: "KFC" ,
-  			hours: "" ,
-  			image: "http://i.imgur.com/uH6wzbC.png" ,
-  			menu: "http://www.fastfoodmenuprices.com/kfc-menu-prices/" 
-  		}
-	]
+    			name: "Taco Bell" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/4zIkrGS.png" ,
+    			menu: "http://www.fastfoodmenuprices.com/taco-bell-prices/" 
+    		},
+    		{
+    			name: "Starbucks" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/bdxfdKo.jpg" ,
+    			menu: "http://www.fastfoodmenuprices.com/starbucks-prices/" 
+    		},
+    		{
+    			name: "Burger King" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/vt50Cc3.png" ,
+    			menu: "http://www.fastfoodmenuprices.com/burger-king-prices/" 
+    		},
+          {
+    			name: "Pancheros" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/CbpZiHA.png" ,
+    			menu: "http://pancheros.com/menu" 
+    		},
+    		{
+    			name: "The Big Salad" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/ivCmZ6T.png" ,
+    			menu: "https://s3.amazonaws.com/weazy/TheBigSalad.pdf" 
+    		},
+    		{
+    			name: "Curry On" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/RjHy39d.jpg" ,
+    			menu: "https://s3.amazonaws.com/weazy/CurryOn.pdf" 
+    		}
+    	]
+    	@restaurants3 =	[
+    		{
+    			name: "Great Plains Burger" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/uyym5Jt.jpg" ,
+    			menu: "http://www.greatplainsburger.com/fax-order.pdf" 
+    		},{
+    			name: "KFC" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/uH6wzbC.png" ,
+    			menu: "http://www.fastfoodmenuprices.com/kfc-menu-prices/" 
+    		}
+  	  ]
 	         
   end
 end
