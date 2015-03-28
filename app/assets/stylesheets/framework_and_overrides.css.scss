@@ -177,6 +177,12 @@ body {
   }*/
 }
 
+@media (max-width: 768px) {
+  #jumbotron.jumbotron {
+    min-height: 0px;
+  }
+}
+
 
 #instructions {
   background-color: $color1darker;
