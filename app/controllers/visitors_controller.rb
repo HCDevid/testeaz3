@@ -712,16 +712,30 @@ class VisitorsController < ApplicationController
     
     
   	@restaurants1 = [{
-  			name:  "Krogers",
-  			hours: "" ,
-  			image: "http://i.imgur.com/aMUgNaS.png" ,
-  			menu:  "",
-  			notes: "We delivery any prepared food."
+    			name: "Zingermans Roadhouse" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/0FIMDhQ.png" ,
+    			menu: "http://www.zingermansroadhouse.com/menus/" 
   		},{
+    			name: "Buffalo Wild Wings" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/OXNuZSR.png" ,
+    			menu: "http://www.buffalowildwings.com/Global/menutier_pdfs/P16_Q4_2012_Call_Ahead_Menu.pdf" 
+    		},{
   			name: "Subway" ,
   			hours: "" ,
   			image: "http://i.imgur.com/PaZsVWx.jpg" ,
   			menu:  "http://www.fastfoodmenuprices.com/subway-prices/"
+  		},{
+  			name: "Fleetwood Diner",
+  			hours:  "",
+  			image:  "http://i.imgur.com/4Yecund.png",
+  			menu:  "http://thefleetwooddiner.com/gallery/"
+  		},{
+  			name: "Jerusalem Garden",
+  			hours:  "",
+  			image:  "http://i.imgur.com/WCLXIj9.png",
+  			menu:  "http://www.jerusalemgarden.net/jg/menu.htm#pagetop"
   		},{
   			name: "Wendy's",
   			hours:  "",
@@ -736,6 +750,12 @@ class VisitorsController < ApplicationController
     			hours: "" ,
     			image: "http://i.imgur.com/4zIkrGS.png" ,
     			menu: "http://www.fastfoodmenuprices.com/taco-bell-prices/" 
+    		},
+    		{
+    			name: "Whole Foods" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/mdFPdlo.png" ,
+    			menu: ""
     		},
     		{
     			name: "Starbucks" ,
@@ -756,6 +776,22 @@ class VisitorsController < ApplicationController
     			menu: "http://pancheros.com/menu" 
     		},
     		{
+  			name:  "Krogers",
+  			hours: "" ,
+  			image: "http://i.imgur.com/aMUgNaS.png" ,
+  			menu:  "",
+  			notes: "We delivery any prepared food."
+  		},{
+    			name: "Pacific Rim by Kana" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/xODSlb9.png" ,
+    			menu: "http://pacificrimbykana.com/menu/dinner-menu/" 
+    		},{
+    			name: "Zingermans Deli" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/q4anPLS.png" ,
+    			menu: "http://www.zingermansdeli.com/menus/corned-beef-sandwiches/" 
+  		},{
     			name: "The Big Salad" ,
     			hours: "" ,
     			image: "http://i.imgur.com/ivCmZ6T.png" ,
@@ -775,10 +811,20 @@ class VisitorsController < ApplicationController
     			image: "http://i.imgur.com/uyym5Jt.jpg" ,
     			menu: "http://www.greatplainsburger.com/fax-order.pdf" 
     		},{
-    			name: "KFC" ,
+    			name: "Slurping Turtle" ,
     			hours: "" ,
-    			image: "http://i.imgur.com/uH6wzbC.png" ,
-    			menu: "http://www.fastfoodmenuprices.com/kfc-menu-prices/" 
+    			image: "http://i.imgur.com/48cEzV0.png" ,
+    			menu: "http://www.slurpingturtle.com/annarbor/pdf/TKY_ST_T2Go_WEB.pdf" 
+    		},{
+    			name: "Palm Palace" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/Nv8UVWB.png" ,
+    			menu: "http://palmpalace.com/menu.php" 
+    		},{
+    			name: "Frita Batidos" ,
+    			hours: "" ,
+    			image: "http://i.imgur.com/OyKzZWZ.png" ,
+    			menu: "http://www.fritabatidos.com/menu/" 
     		}
   	  ]
 	         
