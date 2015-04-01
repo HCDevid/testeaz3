@@ -1,14 +1,14 @@
 <div class="item" id="<%= item[:id] %>"  >
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 collapseparent">
                 <div class="row item-title">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 collapsevisible">
                         <span class="name" data-name="<%= item[:name] %>"><%= item[:name]  %></span>
                         <span class="price" data-price="<%= item[:price] %>">$<%= number_with_precision(item[:price],precision:2) %></span>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row collapsetarget">
                     <div class="col-lg-12">
                             <% item[:groupedVariations].each_with_index do |variation_group,i| %>
                                 <% if variation_group.first[:type] == "mutex" %>
@@ -46,7 +46,7 @@
                 <!--        <div class="notes" ><textarea cols="20" rows="4" placeholder="Add Your Notes"></textarea></div>-->
                 <!--    </div>-->
                 <!--</div>-->
-                <div class="row">
+                <div class="row collapsetarget">
                     <div class="col-lg-12 add">
                         <a href="#" class="btn btn-success add_item">Add Item</a>
                     </div>

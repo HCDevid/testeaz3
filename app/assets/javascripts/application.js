@@ -164,4 +164,37 @@ $(function(){
     }
     renderOrder();
     
+    // Contains javascript to make certain elements of the menus collapsible
+    $('.collapseparent').on('click', function (e) {
+        $('.collapseparent').not(this).each(function() {
+           $(this).children('.collapsetarget').slideUp();
+        });
+        $(this).children('.collapsetarget').slideDown();
+        return false;
+        });
+        
+
+    $('.collapseparent').on('mouseleave', function () {
+        $(this).children('.collapsetarget').stop(true, true).slideUp();
+        return false;
+    });
+    
+    
+    // Makes the ordering sidebar scrollable
+// 	var offsetPixels = 670; 
+
+// 	$(window).scroll(function() {
+// 		if ($(window).scrollTop() > offsetPixels) {
+// 			$( "#ordering" ).css({
+// 				"position": "fixed",
+// 				"top": "15px"
+// 			});
+// 		} else {
+// 			$( ".scrollingBox" ).css({
+// 				"position": "relative",
+// 				"top": "0"
+// 			});
+// 		}
+// 	});
+
 });

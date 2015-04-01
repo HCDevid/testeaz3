@@ -42,6 +42,7 @@
 
 
  #ordering {
+     
  
  #order{
      border: 1px black solid;
@@ -121,7 +122,8 @@
                  padding-top: 3px;
                  margin-right: 3em;
              }
-             padding-bottom: 35px;
+            //  padding-bottom was originally 35px;
+             padding-bottom: 0px;
          }
          .variation-group {
              min-height: 5em;
