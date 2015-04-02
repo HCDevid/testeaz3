@@ -281,6 +281,11 @@ main#main, #menus {
 
 
 // Collapse Menu CSS
+.collapseparent {
+  border: 1px solid;
+  border-color: $color1dark;
+}
+
 .collapsetarget {
   display: none;
 }

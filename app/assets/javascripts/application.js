@@ -56,8 +56,14 @@ $(function(){
        item_data.variations_data = variations_data;
        items_data.push(item_data);
        renderOrder();
+       e.stopPropagation();
        e.preventDefault();
-    }); 
+    });
+    
+    
+    $(".item input, .item span").on("click",function (e) {
+       e.stopPropagation();
+    });
     
     $("#items").on('click',".remove_item",function(e) {
         var item_to_remove = $($(this).parents(".item"));
@@ -171,7 +177,7 @@ $(function(){
         });
         $(this).children('.collapsetarget').slideDown();
         return false;
-        });
+    });
         
 
     $('.collapseparent').on('mouseleave', function () {

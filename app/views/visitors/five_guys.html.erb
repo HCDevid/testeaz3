@@ -24,7 +24,11 @@
     <div class="row">
         <div class="col-lg-3">
             <h2>Order</h2>
+            <% if browser.mobile? %>
+            <div id="order">
+            <% else %>
             <div id="order" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+            <% end %>
                 <div id="items">
                     
                 </div>
