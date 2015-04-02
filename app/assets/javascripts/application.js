@@ -61,7 +61,7 @@ $(function(){
     });
     
     
-    $(".item input, .item span").on("click",function (e) {
+    $(".item input").on("click",function (e) {
        e.stopPropagation();
     });
     
